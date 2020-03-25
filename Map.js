@@ -8,7 +8,7 @@ import Sidemap from "./Sidemap";
 const Map = () =>{
 
    const mapList = data.map((state, index) =>{
-   // console.log(data)
+   console.log(state)
     return (
          <State key={index}
       fillColor="#ffffff" 
