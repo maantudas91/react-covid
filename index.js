@@ -3,25 +3,14 @@ import { render } from 'react-dom';
 
 import Map from './Map';
 import './style.css';
+import { DataProvider } from './context/index';
 
 const App = () => {
-
-  const [ data, setData] = useState({});
-
-  const fetchData = async () =>{
-    const apiCall = await fetch('https://api.covid19india.org/data.json');
-    const data = await apiCall.json();
-    setData(data);
-  }
-  
   return (
-    <div>
+    <DataProvider>
+      <DetailsCard />
       <Map />
-      <p>
-        Start editing to see some magic happen :)
-      </p>
-    </div>
+    </DataProvider>
   );
 }
-
-render(<App />, document.getElementById('root'));
+render( <App />, document.getElementById('root'));
