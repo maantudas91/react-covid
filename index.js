@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import Map from './Map';
 import './style.css';
 import { DataProvider } from './context/index';
-import { DetailsCard } from './DetailsCard';
+import DetailsCard from './DetailsCard';
 
 const App = () => {
   return (
