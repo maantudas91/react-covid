@@ -9,17 +9,19 @@ const App = () => {
   const [ data, setData] = useState({});
 
   const fetchData = async () =>{
-
+    const apiCall = await fetch('https://api.covid19india.org/data.json');
+    const data = await apiCall.json();
+    setData(data);
   }
   
-    return (
-      <div>
-        <Map />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
-    );
+  return (
+    <div>
+      <Map />
+      <p>
+        Start editing to see some magic happen :)
+      </p>
+    </div>
+  );
 }
 
 render(<App />, document.getElementById('root'));
