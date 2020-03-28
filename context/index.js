@@ -1,25 +1,11 @@
 
 import React, { useState, useEffect } from 'react'
+import useFetchData  from '../hooks/useFetchData';
 
 const DataContext = React.createContext();
 
 const DataProvider = (props) => {
-  let url = `https://api.covid19india.org/data.json`
-  const [ data, setData] = useState({});
-
-  const fetchData = async () =>{
-    try {
-      const apiCall = await fetch(url);
-      const data = await apiCall.json();
-      setData(data);
-    }catch(e){
-      console.log(e.message);
-    }
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
+  const data = useFetchData("https://api.covid19india.org/data.json");
 
   return (
     <DataContext.Provider value={{data}}>
