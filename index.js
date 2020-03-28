@@ -10,6 +10,7 @@ import DetailsCard from './DetailsCard';
 const App = () => {
   return (
     <DataProvider>
+    <h3>Maantu Das</h3>
       <>
       <DetailsCard />
       <Map />
